@@ -36,14 +36,15 @@ def max_heapify(arm,j):
         swap(arm,j-1,largest-1)
         max_heapify(arm, largest)
 
-def heapsort(armh):
+def heapsort_asc(armh):
     global heap_size
     build_max_heap(armh)
     for i in range(heap_size,1,-1):
         swap(armh,0,i-1)
         heap_size = heap_size - 1
         max_heapify(armh, 1)
-    
+
+   
 if __name__ == '__main__':
 #     a = [106,33,44,36,29,309,64]
     a=raw_input("Enter list: ")
@@ -52,6 +53,7 @@ if __name__ == '__main__':
     print(a)
 #     print(parent(9))
 #     build_max_heap(a)
-    heapsort(a)
-    print("sorted array:\n"+str(a))
+    heapsort_asc(a)
+    print("sorted array ascending:\n"+str(a))
+    
     
